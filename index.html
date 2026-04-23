@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital SaludPlus Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #eef3f9;
+}
+
+/* HEADER */
+header {
+  background: #0a4fa3;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 75px;
+  margin-right: 15px;
+  border-radius: 104%;
+  background: white;
+  padding: -2px;
+}
+
+/* NAV */
+nav {
+  background: #083b7a;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #00c2a8;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 45px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: #00c2a8;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+}
+
+/* SECTION */
+section {
+  padding: 50px 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.servicio-card {
+  position: relative;
+  height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.servicio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.servicio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+}
+
+.servicio-overlay h3 {
+  margin: 0 0 10px;
+}
+
+.servicio-btn {
+  background: #4b0082;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100px;
+  font-size: 14px;
+}
+
+.servicio-card:hover img {
+  transform: scale(1.1);
+}
+
+/* DOCTOR */
+.doctor img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FORM */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0a4fa3;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DARK MODE */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  background: #083b7a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/Logo.jpg" class="logo">
+  <h2>Hospital SaludPlus</h2>
+</header>
+
+<nav>
+  <a href="sevicios.html">Servicios</a>
+  <a href="medicos.html">Médicos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="https://script.google.com/macros/s/AKfycbzfXOdF73G0xu7cBnOJoxp-2fBmr2a5uh3Ym_9a-dbiovzsOorrLpYf8ymTu_vP_5uf/exec">Expediente</a>
+  <a href="cita.html">Citas</a>
+</nav>
+
+<div class="hero"> 
+<h1>Atención Médica Premium</h1>
+ <p>Calidad, tecnología y confianza</p>
+</div>
+
+<section id="nosotros">
+  <h2>Sobre Nosotros</h2>
+  <p><b>Misión:</b> Brindar protección integral (salud, invalidez, vejez, muerte) a derechohabientes mediante servicios preventivos y curativos, seguridad social y prestaciones económicas.
+</p>
+  <p><b>Visión:</b>Ser el pilar de la seguridad social en México, operando con un modelo que combina la eficiencia financiera con la justicia social, la calidez y el humanismo en el servicio.</p>
+  <div class="servicio-btn"><a href=nosotros.html>VER MAS</a></div>
+</section>
+<section id="servicios">
+  <h2>Servicios</h2>
+
+  <div class="servicios-grid">
+
+    <div class="servicio-card">
+      <img src="img/hospital.jpg">
+      <div class="servicio-overlay">
+        <h3>ඞ</h3>
+          <div class="servicio-btn"><a href="sevicios.html">VER MAS</a></div>
+      </div>
+    </div>
+
+    <div class="servicio-card">
+      <img src="img/hospitalizacion.jpg">
+      <div class="servicio-overlay">
+        <h3>ඞ</h3>
+        <div class="servicio-btn">VER ↗</div>
+      </div>
+    </div>
+
+    <div class="servicio-card">
+      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118">
+      <div class="servicio-overlay">
+        <h3>ඞ</h3>
+        <div class="servicio-btn">VER ↗</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+      <footer style="background:#083b7a; color:white; text-align:center; padding:20px;">
+<!-- ===== CONTACTO Y HORARIOS ===== -->
+  <div style="max-width:1000px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px;">
+    
+    <div>
+      <h2 style="color:#2a7ab9;">Horario de Atención</h2>
+      <p>Lunes - Viernes: 8:00 AM - 8:00 PM</p>
+      <p>Sábados: 9:00 AM - 4:00 PM</p>
+      <p>Urgencias: 26 horas</p>
+    </div>
+
+    <div>
+      <h2 style="color:#2a7ab9;">Contacto</h2>
+      <p>📍 Dirección: Calle Salud #123</p>
+      <p>📞 Teléfono: 55 1234 5678</p>
+      <p>✉️ Email: nene@saludplush.com</p>
+    </div>
+
+  </div>
+  <p>© 2026 Hospital SaludPlus - Todos los derechos reservados</p>
+</footer>
+  
+</body>
+</html>

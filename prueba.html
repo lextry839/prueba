@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros - Hospital SaludPlus</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f8fb;
+}
+
+/* 🔵 CARRUSEL */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BOTONES SIN CONTORNO */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 35px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* 🔵 CONTENIDO */
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+h2 {
+  text-align: center;
+  color: #2a7ab9;
+  margin-bottom: 10px;
+}
+
+.intro {
+  text-align: center;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  color: #2a7ab9;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔵 CARRUSEL -->
+<div class="carousel">
+
+  <div class="slide active">
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3">
+  </div>
+
+  <div class="slide">
+    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289">
+  </div>
+
+  <div class="slide">
+    <img src="img/hospital.jpg">
+  </div>
+
+  <button class="btn prev" onclick="cambiarSlide(-1)">❮</button>
+  <button class="btn next" onclick="cambiarSlide(1)">❯</button>
+
+</div>
+
+<!-- 🔵 NOSOTROS -->
+<div class="container">
+
+  <h2>Sobre Hospital SaludPlus</h2>
+
+  <p class="intro">
+    El Hospital SaludPlus es una institución médica comprometida con brindar atención de alta calidad,
+    combinando tecnología de vanguardia con un enfoque humano y cercano hacia nuestros pacientes.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+      <div class="card-content">
+        <h3>Nuestra Historia</h3>
+        <p>
+          Fundado en 2005, el Hospital SaludPlus nació con el objetivo de ofrecer servicios médicos accesibles
+          y de excelencia. A lo largo de los años, hemos crecido hasta convertirnos en un referente regional
+          en atención hospitalaria.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118">
+      <div class="card-content">
+        <h3>Misión</h3>
+        <p>
+          Proporcionar atención médica integral con altos estándares de calidad, priorizando la seguridad,
+          el bienestar y la satisfacción de nuestros pacientes.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322">
+      <div class="card-content">
+        <h3>Visión</h3>
+        <p>
+          Ser un hospital líder en innovación médica, reconocido por su excelencia en servicios de salud
+          y su compromiso con la comunidad.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580281657527-47d37dcd5c55">
+      <div class="card-content">
+        <h3>Nuestros Valores</h3>
+        <p>
+          Ética profesional, respeto, responsabilidad, innovación y compromiso con la salud de nuestros pacientes
+          son los pilares que guían nuestro trabajo diario.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function mostrarSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+function cambiarSlide(direccion) {
+  index += direccion;
+  if (index >= slides.length) index = 0;
+  if (index < 0) index = slides.length - 1;
+  mostrarSlide(index);
+}
+
+// 🔥 Cambio automático cada 5 segundos
+setInterval(() => {
+  cambiarSlide(1);
+}, 5000);
+</script>
+
+  <!-- ===== INFORMACIÓN DEL HOSPITAL ===== -->
+<section style="background:#ffffff; padding:50px 20px;">
+  <div style="max-width:1000px; margin:auto; text-align:center;">
+    <h2 style="color:#2a7ab9;">¿Por qué elegirnos?</h2>
+    <p style="color:#555; margin-top:15px;">
+      En Hospital SaludPlus brindamos atención médica de calidad, con tecnología moderna
+      y un equipo de especialistas comprometidos con tu bienestar.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; margin-top:30px;">
+      
+      <div>
+        <h3 style="color:#3498db;">+10 años</h3>
+        <p>Experiencia médica</p>
+      </div>
+
+      <div>
+        <h3 style="color:#3498db;">24/7</h3>
+        <p>Atención de urgencias</p>
+      </div>
+
+      <div>
+        <h3 style="color:#3498db;">+50</h3>
+        <p>Especialistas</p>
+      </div>
+
+      <div>
+        <h3 style="color:#3498db;">100%</h3>
+        <p>Compromiso con pacientes</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer style="background:#083b7a; color:white; text-align:center; padding:20px;">
+<!-- ===== CONTACTO Y HORARIOS ===== -->
+  <div style="max-width:1000px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px;">
+    
+    <div>
+      <h2 style="color:#2a7ab9;">Horario de Atención</h2>
+      <p>Lunes - Viernes: 8:00 AM - 8:00 PM</p>
+      <p>Sábados: 9:00 AM - 4:00 PM</p>
+      <p>Urgencias: 26 horas</p>
+    </div>
+
+    <div>
+      <h2 style="color:#2a7ab9;">Contacto</h2>
+      <p>📍 Dirección: Calle Salud #123</p>
+      <p>📞 Teléfono: 55 1234 5678</p>
+      <p>✉️ Email: nene@saludplush.com</p>
+    </div>
+
+  </div>
+  <p>© 2026 Hospital SaludPlus - Todos los derechos reservados</p>
+</footer>
+</body>
+</html>
